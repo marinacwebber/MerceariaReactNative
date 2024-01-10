@@ -1,30 +1,48 @@
-import { Text, View, StyleSheet, Image } from "react-native";
+import { Text, View, StyleSheet, Image, Button } from "react-native";
 
-import morangos from '../../assets/morangos.jpeg';
-
-export default function Card({nome , preco}) {
+export default function Card({nome , preco, imagem}) {
     return (
         <>
-        <View style={estilos.card}>
-        <Image source={morangos} style={estilos.imagem}/>
-        <View>
-            <Text>{ nome }</Text>
-            <Text>{ preco }</Text>
-        </View>
+        <View style={estilos.container}>
+            <View style={estilos.card}>
+                <Image source={{uri: imagem}} style={estilos.imagem}/>
+            <View style={estilos.textoCard}>
+                <Text style={estilos.textoNome}>{ nome }</Text>
+                <Text style={estilos.textoPreco}>{ preco }</Text>
+            </View>
+            </View>
+            <Button title="Comprar"/>
         </View>
         </>
     )
 }
 
 const estilos = StyleSheet.create ({
-    imagem: {
-      width: 110,
-      height: 110,
+    container: {        
+      padding: 10,
+      backgroundColor: "#eee",
+      elevation: 10,
+      marginHorizontal: 10,
+      marginVertical: 5,
     },
     card: {
-        alignItems: "center",
-        flexDirection: "row",
-        padding: 50,
-        justifyContent: "space-between",
-    }
+      flexDirection: "row",        
+      justifyContent: "flex-start",      
+      paddingBottom: 12,
+    },
+    imagem: {
+      width: 100,
+      height: 100,
+    },
+    textoCard: {
+      paddingHorizontal: 30, 
+    },
+    textoNome: {
+      fontWeight: "bold" ,
+      fontSize: 18 
+    },
+    textoPreco: {
+      fontSize: 18,
+      color: "red",
+    },
   })
