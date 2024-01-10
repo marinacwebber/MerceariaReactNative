@@ -15,7 +15,14 @@ const produtos = [
     nome: "Banana",
     preco: 7.12,
     imagem: "https://images.pexels.com/photos/1093038/pexels-photo-1093038.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    banana: 0
+    estoque: 10
+  },
+  {
+    id: 3,
+    nome: "Chocolate",
+    preco: 5.00,
+    imagem: "https://images.pexels.com/photos/65882/chocolate-dark-coffee-confiserie-65882.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    estoque: 50
   }
 ]
 
