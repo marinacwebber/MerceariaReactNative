@@ -4,14 +4,18 @@ import Card from './src/componentes/Card';
 
 const produtos = [
   {
+    id: 1,
     nome: "Laranja",
     preco: 3.56,
-    imagem: "https://images.pexels.com/photos/691166/pexels-photo-691166.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+    imagem: "https://images.pexels.com/photos/691166/pexels-photo-691166.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    estoque: 30 
   },
   {
+    id: 2,
     nome: "Banana",
     preco: 7.12,
-    imagem: "https://images.pexels.com/photos/1093038/pexels-photo-1093038.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    imagem: "https://images.pexels.com/photos/1093038/pexels-photo-1093038.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    banana: 0
   }
 ]
 
@@ -19,7 +23,7 @@ const produtos = [
 export default function App() {
   return (
     <SafeAreaView style={estilos.container}>
-      {produtos.map(produto => <Card nome={produto.nome} preco={produto.preco} imagem={produto.imagem} />)} 
+      {produtos.map(produto => <Card key={produto.id} nome={produto.nome} preco={produto.preco} imagem={produto.imagem} estoque={produto.estoque}/>)} 
 
       <StatusBar style="auto"/>
     </SafeAreaView>    

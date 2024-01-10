@@ -1,6 +1,9 @@
 import { Text, View, StyleSheet, Image, Button } from "react-native";
 
-export default function Card({nome , preco, imagem}) {
+export default function Card({nome , preco, imagem, estoque}) {
+
+    const botaoInativo = (!!estoque <= 0)
+
     return (
         <>
         <View style={estilos.container}>
@@ -11,7 +14,7 @@ export default function Card({nome , preco, imagem}) {
                 <Text style={estilos.textoPreco}>R$ { preco.toFixed(2) }</Text>
             </View>
             </View>
-            <Button title="Comprar"/>
+            <Button title="Comprar" disabled={botaoInativo}/>
         </View>
         </>
     )
