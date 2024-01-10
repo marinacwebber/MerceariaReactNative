@@ -8,7 +8,7 @@ export default function Card({nome , preco, imagem}) {
                 <Image source={{uri: imagem}} style={estilos.imagem}/>
             <View style={estilos.textoCard}>
                 <Text style={estilos.textoNome}>{ nome }</Text>
-                <Text style={estilos.textoPreco}>{ preco }</Text>
+                <Text style={estilos.textoPreco}>R$ { preco.toFixed(2) }</Text>
             </View>
             </View>
             <Button title="Comprar"/>
